@@ -1,6 +1,7 @@
-# Work Manager
+# Work Tab for Colony Manager Redux
 
-A Labor tab for [Colony Manager Redux](https://github.com/ilyvion/colony-manager-redux).
+A Labor tab for [Colony Manager Redux](https://github.com/ilyvion/colony-manager-redux), which it
+requires — this mod does nothing on its own.
 
 The other manager tabs answer "how much wood should we have?". This one answers "who should be
 cutting it, and when?" — it reads the stock targets already configured on those tabs, watches how

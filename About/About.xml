@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Work Manager</name>
+  <name>Work Tab for Colony Manager Redux</name>
   <author>archdukejim</author>
   <packageId>archdukejim.WorkManager</packageId>
   <supportedVersions>
