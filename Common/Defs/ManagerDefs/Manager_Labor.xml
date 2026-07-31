@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ColonyManagerRedux.ManagerDef>
+        <defName>WM_LaborManager</defName>
+        <!-- After the resource tabs, since this one consumes their thresholds. -->
+        <order>1500</order>
+        <managerJobClass>WorkManager.ManagerJob_Labor</managerJobClass>
+        <managerSettingsClass>WorkManager.ManagerSettings_Labor</managerSettingsClass>
+        <managerTabClass>WorkManager.ManagerTab_Labor</managerTabClass>
+        <!-- Placeholder: borrows Colony Manager Redux's stopwatch icon until this mod ships its own. -->
+        <iconPath>UI/Icons/CMR_stopwatch</iconPath>
+        <label>labor</label>
+    </ColonyManagerRedux.ManagerDef>
+</Defs>

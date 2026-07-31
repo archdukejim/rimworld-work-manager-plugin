@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WorkManager.Common.On>on</WorkManager.Common.On>
+  <WorkManager.Common.Off>off</WorkManager.Common.Off>
+
+  <WorkManager.Labor.JobLabel>Labor plan</WorkManager.Labor.JobLabel>
+  <WorkManager.Labor.NoPlanYet>no plan yet</WorkManager.Labor.NoPlanYet>
+
+  <!-- Options -->
+  <WorkManager.Option.GrowthBias>Train vs. produce</WorkManager.Option.GrowthBias>
+  <WorkManager.Option.GrowthBias.Tip>At 0%, work goes to whoever produces the most right now. At 100%, it goes to whoever learns fastest and has the most room to grow — passionate, unskilled pawns get the hours. In between, both matter.</WorkManager.Option.GrowthBias.Tip>
+  <WorkManager.Option.RespectPassions>Account for passions</WorkManager.Option.RespectPassions>
+  <WorkManager.Option.RespectPassions.Tip>Let passion count toward the assignment score. Passion mostly speeds up learning, so it nudges present-day assignments and dominates when "train vs. produce" is high.</WorkManager.Option.RespectPassions.Tip>
+  <WorkManager.Option.HealthAware>Account for injuries</WorkManager.Option.HealthAware>
+  <WorkManager.Option.HealthAware.Tip>Weigh each pawn's body capacities against what the work needs. A pawn with a bad leg stops being scheduled for hauling, because their slow trips cost the colony more than the hauling gains.</WorkManager.Option.HealthAware.Tip>
+  <WorkManager.Option.WellBeingCare>Care for well-being</WorkManager.Option.WellBeingCare>
+  <WorkManager.Option.WellBeingCare.Tip>When a pawn's mood drops below the mood floor, take scheduled hours off their day and leave them free for recreation.</WorkManager.Option.WellBeingCare.Tip>
+  <WorkManager.Option.MaxWorkHours>Max work hours per day</WorkManager.Option.MaxWorkHours>
+  <WorkManager.Option.MaxWorkHours.Tip>Hard cap on scheduled hours. Pawns still need to eat and sleep. Past the cap they fall back to their own work priorities rather than being left idle.</WorkManager.Option.MaxWorkHours.Tip>
+  <WorkManager.Option.MinBlockHours>Minimum block length</WorkManager.Option.MinBlockHours>
+  <WorkManager.Option.MinBlockHours.Tip>Shortest run of hours the planner will hand to one work type, so pawns aren't sent walking across the map every hour.</WorkManager.Option.MinBlockHours.Tip>
+  <WorkManager.Option.RespectTimetable>Respect timetable</WorkManager.Option.RespectTimetable>
+  <WorkManager.Option.RespectTimetable.Tip>Only schedule hours the pawn's own timetable marks as Work or Anything. Turn this off to schedule their whole waking day.</WorkManager.Option.RespectTimetable.Tip>
+  <WorkManager.Option.NeverIdle>Never leave idle</WorkManager.Option.NeverIdle>
+  <WorkManager.Option.NeverIdle.Tip>Outside their scheduled block, leave the pawn's own priorities in place so they always have something to fall back on. Turn this off to have unscheduled hours mean "do nothing".</WorkManager.Option.NeverIdle.Tip>
+  <WorkManager.Option.MoodFloor>Mood floor</WorkManager.Option.MoodFloor>
+  <WorkManager.Option.MoodFloor.Tip>Mood level below which well-being care starts taking hours back off the schedule.</WorkManager.Option.MoodFloor.Tip>
+  <WorkManager.Option.WellBeingHours>Hours returned when unhappy</WorkManager.Option.WellBeingHours>
+  <WorkManager.Option.WellBeingHours.Tip>How many hours to hand back at most when a pawn is under the mood floor. The further under they are, the more of this they get.</WorkManager.Option.WellBeingHours.Tip>
+  <WorkManager.Option.KeepCriticalManned>Keep critical work manned</WorkManager.Option.KeepCriticalManned>
+  <WorkManager.Option.KeepCriticalManned.Tip>Satisfy each demand's minimum worker count before anything else, rotating the duty between pawns so research or doctoring stays covered around the clock without one colonist working a 24-hour shift.</WorkManager.Option.KeepCriticalManned.Tip>
+
+  <!-- Sections -->
+  <WorkManager.Section.Status>Plan</WorkManager.Section.Status>
+  <WorkManager.Section.Hysteresis>Hysteresis</WorkManager.Section.Hysteresis>
+  <WorkManager.Section.Options>Options</WorkManager.Section.Options>
+  <WorkManager.Section.Pawns>Colonists</WorkManager.Section.Pawns>
+  <WorkManager.Section.Demands>Demands</WorkManager.Section.Demands>
+  <WorkManager.Section.Schedule>Schedule</WorkManager.Section.Schedule>
+
+  <!-- Status -->
+  <WorkManager.Status.NoPlan>No schedule has been built yet.</WorkManager.Status.NoPlan>
+  <WorkManager.Status.PlanAge>Schedule built {0} ago.</WorkManager.Status.PlanAge>
+  <WorkManager.Status.Applier>Applying through: {0}</WorkManager.Status.Applier>
+  <WorkManager.Status.UseEnhancedWorkTab>Show schedule in Enhanced Work Tab</WorkManager.Status.UseEnhancedWorkTab>
+  <WorkManager.Status.UseEnhancedWorkTab.Tip>When Enhanced Work Tab is loaded, write the whole day's schedule into its hour-aware priorities so you can see it in the work tab. Otherwise priorities are rewritten as each hour comes around.</WorkManager.Status.UseEnhancedWorkTab.Tip>
+  <WorkManager.Status.PlanNow>Re-plan now</WorkManager.Status.PlanNow>
+  <WorkManager.Status.PlanNow.Tip>Mark this job as due so the manager rebuilds the schedule on its next pass.</WorkManager.Status.PlanNow.Tip>
+  <WorkManager.Status.RecaptureBaseline>Re-read priorities</WorkManager.Status.RecaptureBaseline>
+  <WorkManager.Status.RecaptureBaseline.Tip>Take the colonists' current work priorities as the new baseline. That baseline is what pawns fall back to once they hit their hour cap or have nothing scheduled, and what gets restored if you delete this job.</WorkManager.Status.RecaptureBaseline.Tip>
+
+  <!-- Hysteresis -->
+  <WorkManager.Hysteresis.ResumeBelow>Resume work below {0} of target</WorkManager.Hysteresis.ResumeBelow>
+  <WorkManager.Hysteresis.ResumeBelow.Tip>How far a stockpile has to fall before labor is pulled back onto it. It stops being worked once it reaches target again.</WorkManager.Hysteresis.ResumeBelow.Tip>
+  <WorkManager.Hysteresis.Explanation>A resource is worked until it reaches its target, then left alone until it falls back to {0} of target. Between those two points the last decision stands, so labor doesn't flip between wood and steel every cycle.</WorkManager.Hysteresis.Explanation>
+
+  <!-- Options column -->
+  <WorkManager.Options.EditingColony>Colony-wide settings</WorkManager.Options.EditingColony>
+  <WorkManager.Options.EditingPawn>Settings for {0}</WorkManager.Options.EditingPawn>
+  <WorkManager.Options.BackToColony>Colony</WorkManager.Options.BackToColony>
+  <WorkManager.Options.ClearOverrides>Clear this colonist's overrides</WorkManager.Options.ClearOverrides>
+  <WorkManager.Options.ScopePawn>Pawn</WorkManager.Options.ScopePawn>
+  <WorkManager.Options.ScopeColony>Colony</WorkManager.Options.ScopeColony>
+
+  <!-- Colonist list -->
+  <WorkManager.Pawns.Row>{0} — {1}h scheduled</WorkManager.Pawns.Row>
+
+  <!-- Demands -->
+  <WorkManager.Demands.Empty>No managed jobs with stock targets on this map yet. Set targets on the other manager tabs, or add a standing demand below.</WorkManager.Demands.Empty>
+  <WorkManager.Demands.AddStanding>Add standing demand…</WorkManager.Demands.AddStanding>
+  <WorkManager.Demands.AddStanding.Tip>Add work that has no stockpile target of its own — research, doctoring, cleaning — so it can be kept manned.</WorkManager.Demands.AddStanding.Tip>
+  <WorkManager.Demands.Criticality>Priority {0}</WorkManager.Demands.Criticality>
+  <WorkManager.Demands.Criticality.Tip>Multiplier on this demand's pull. Set it to zero to leave this work out of the plan entirely.</WorkManager.Demands.Criticality.Tip>
+  <WorkManager.Demands.MinWorkers>Min {0}</WorkManager.Demands.MinWorkers>
+  <WorkManager.Demands.MinWorkers.Tip>Keep at least this many pawns on this work every hour, rotating between them. Click to cycle.</WorkManager.Demands.MinWorkers.Tip>
+  <WorkManager.Demands.MaxWorkers>Max {0}</WorkManager.Demands.MaxWorkers>
+  <WorkManager.Demands.MaxWorkersAny>Max any</WorkManager.Demands.MaxWorkersAny>
+  <WorkManager.Demands.MaxWorkers.Tip>Never put more than this many pawns on it at once. Click to cycle.</WorkManager.Demands.MaxWorkers.Tip>
+  <WorkManager.Demands.Tip>{0}\nWeight {1} ({2}). Right-click to pin colonists or disable this demand.</WorkManager.Demands.Tip>
+  <WorkManager.Demands.Pin>Only let {0} do this</WorkManager.Demands.Pin>
+  <WorkManager.Demands.Unpin>Stop reserving this for {0}</WorkManager.Demands.Unpin>
+  <WorkManager.Demands.Enable>Enable</WorkManager.Demands.Enable>
+  <WorkManager.Demands.Disable>Disable</WorkManager.Demands.Disable>
+  <WorkManager.Demands.RemoveStanding>Remove standing demand</WorkManager.Demands.RemoveStanding>
+  <WorkManager.Demands.NothingToAdd>Every work type is already listed</WorkManager.Demands.NothingToAdd>
+  <WorkManager.Demand.StatusThreshold>{0}/{1} ({2}), {3}/day</WorkManager.Demand.StatusThreshold>
+  <WorkManager.Demand.StatusStanding>standing, min {0}</WorkManager.Demand.StatusStanding>
+
+  <!-- Schedule -->
+  <WorkManager.Schedule.Empty>Nothing scheduled. Either every stockpile is at target, or no colonist is available.</WorkManager.Schedule.Empty>
+  <WorkManager.Schedule.Cell>{0}h — {1}</WorkManager.Schedule.Cell>
+  <WorkManager.Schedule.CellIdle>{0}h — own priorities</WorkManager.Schedule.CellIdle>
+
+  <!-- Plan notes -->
+  <WorkManager.Plan.NoHours>nothing scheduled</WorkManager.Plan.NoHours>
+  <WorkManager.Plan.Impaired>Held back by {0}.</WorkManager.Plan.Impaired>
+  <WorkManager.Plan.NothingToDo>Nothing needed from them this cycle; running on their own priorities.</WorkManager.Plan.NothingToDo>
+  <WorkManager.Plan.AtCap>At their {0}h cap.</WorkManager.Plan.AtCap>
+
+  <!-- Availability -->
+  <WorkManager.Availability.NotSchedulable>Can't be scheduled right now.</WorkManager.Availability.NotSchedulable>
+  <WorkManager.Availability.MoodCut>Mood {0}: {1}h given back for recreation.</WorkManager.Availability.MoodCut>
+
+  <!-- Appliers -->
+  <WorkManager.Applier.Vanilla>work priorities, rewritten hourly</WorkManager.Applier.Vanilla>
+  <WorkManager.Applier.EnhancedWorkTab>Enhanced Work Tab hourly priorities</WorkManager.Applier.EnhancedWorkTab>
+
+  <!-- Job log -->
+  <WorkManager.Log.DemandLine>{0} → {1}: weight {2} ({3}) — {4}</WorkManager.Log.DemandLine>
+  <WorkManager.Log.Active>working</WorkManager.Log.Active>
+  <WorkManager.Log.Satisfied>at target</WorkManager.Log.Satisfied>
+  <WorkManager.Log.PawnSkipped>Skipped {0}: {1}</WorkManager.Log.PawnSkipped>
+  <WorkManager.Log.CoverageLine>Kept {0} manned with {1} worker(s): {2} pawn-hours reserved.</WorkManager.Log.CoverageLine>
+  <WorkManager.Log.PlanInstalled>Scheduled {0} colonist(s) for {1} pawn-hours.</WorkManager.Log.PlanInstalled>
+  <WorkManager.Log.PrioritiesRestored>Handed every managed colonist back their own work priorities.</WorkManager.Log.PrioritiesRestored>
+
+  <!-- Mod settings -->
+  <WorkManager.Settings.Defaults>Defaults for new labor jobs</WorkManager.Settings.Defaults>
+  <WorkManager.Settings.ResumeBelow>Resume below {0} of target</WorkManager.Settings.ResumeBelow>
+  <WorkManager.Settings.ResumeBelow.Tip>Default hysteresis band for new labor jobs.</WorkManager.Settings.ResumeBelow.Tip>
+  <WorkManager.Settings.MaxWorkHours>Max work hours per day: {0}</WorkManager.Settings.MaxWorkHours>
+  <WorkManager.Settings.MaxWorkHours.Tip>Default hard cap on scheduled hours for new labor jobs.</WorkManager.Settings.MaxWorkHours.Tip>
+  <WorkManager.Settings.PreferEnhancedWorkTab>Prefer Enhanced Work Tab</WorkManager.Settings.PreferEnhancedWorkTab>
+  <WorkManager.Settings.PreferEnhancedWorkTab.Tip>When Enhanced Work Tab is loaded, new labor jobs write their schedule into it so it's visible in the work tab.</WorkManager.Settings.PreferEnhancedWorkTab.Tip>
+
+</LanguageData>

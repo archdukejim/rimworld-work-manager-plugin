@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Work Manager</name>
+  <author>archdukejim</author>
+  <packageId>archdukejim.WorkManager</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>Adds a Labor tab to Colony Manager Redux. The manager reads the stock targets you already set on the other manager tabs, watches how fast each stockpile is actually refilling, and writes an hour-by-hour work schedule for every colonist: this pawn mines from 8am to noon, that one hauls until the wood pile is full, and research stays manned around the clock. Work is steered toward whatever is falling behind, with a hysteresis band so labor doesn't flap between wood and steel every cycle. Assignments account for who is actually fastest at the job -- work speed stats, skill, passion, and injuries -- and for pawn well-being, giving hours back to recreation when mood drops. Every option can be set for the colony or overridden for a single pawn.</description>
+  <modDependencies>
+    <li>
+      <packageId>ilyvion.colonymanagerredux</packageId>
+      <displayName>Colony Manager Redux</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3310027356</steamWorkshopUrl>
+      <downloadUrl>https://github.com/ilyvion/colony-manager-redux/releases/latest</downloadUrl>
+    </li>
+    <li>
+      <packageId>ilyvion.Laboratory</packageId>
+      <displayName>ilyvion's Laboratory</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3296362231</steamWorkshopUrl>
+      <downloadUrl>https://github.com/ilyvion/ilyvion-laboratory/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>ilyvion.Laboratory</li>
+    <li>ilyvion.colonymanagerredux</li>
+    <li>natee.EnhancedWorkTab</li>
+  </loadAfter>
+</ModMetaData>
