@@ -20,11 +20,12 @@ public sealed partial class ManagerTab_Labor
 
         if (_demandPreview.Count == 0)
         {
-            var emptyRect = new Rect(pos.x, pos.y, width, ListEntryHeight);
+            var emptyText = "WorkManager.Demands.Empty".Translate();
+            var emptyHeight = Text.CalcHeight(emptyText, width);
             GUI.color = Color.gray;
-            Widgets.Label(emptyRect, "WorkManager.Demands.Empty".Translate());
+            Widgets.Label(new Rect(pos.x, pos.y, width, emptyHeight), emptyText);
             GUI.color = Color.white;
-            pos.y += ListEntryHeight;
+            pos.y += emptyHeight;
         }
 
         foreach (var demand in _demandPreview)
@@ -247,11 +248,12 @@ public sealed partial class ManagerTab_Labor
 
         if (pawns.Count == 0)
         {
-            var emptyRect = new Rect(pos.x, pos.y, width, ListEntryHeight);
+            var emptyText = "WorkManager.Schedule.Empty".Translate();
+            var emptyHeight = Text.CalcHeight(emptyText, width);
             GUI.color = Color.gray;
-            Widgets.Label(emptyRect, "WorkManager.Schedule.Empty".Translate());
+            Widgets.Label(new Rect(pos.x, pos.y, width, emptyHeight), emptyText);
             GUI.color = Color.white;
-            return ListEntryHeight;
+            return emptyHeight;
         }
 
         var gridWidth = width - PawnNameWidth;

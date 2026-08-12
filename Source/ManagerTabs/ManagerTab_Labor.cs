@@ -169,13 +169,17 @@ public sealed partial class ManagerTab_Labor : ManagerTab<ManagerJob_Labor, Mana
         );
         pos.y += ListEntryHeight;
 
-        rowRect.y = pos.y;
-        Widgets.Label(rowRect, "WorkManager.Status.Applier".Translate(job.Applier.Label));
+        // The applier name can be long enough to wrap, so give the row its measured height rather
+        // than a fixed one and let the rows below start clear of it.
+        var applierText = "WorkManager.Status.Applier".Translate(job.Applier.Label);
+        var applierHeight = Mathf.Max(ListEntryHeight, Text.CalcHeight(applierText, width));
+        var applierRect = new Rect(pos.x, pos.y, width, applierHeight);
+        Widgets.Label(applierRect, applierText);
         if (EnhancedWorkTabApplier.UnavailableReason is string reason)
         {
-            TooltipHandler.TipRegion(rowRect, reason);
+            TooltipHandler.TipRegion(applierRect, reason);
         }
-        pos.y += ListEntryHeight;
+        pos.y += applierHeight;
 
         rowRect.y = pos.y;
         var useEnhanced = job.PreferEnhancedWorkTab;
@@ -237,19 +241,18 @@ public sealed partial class ManagerTab_Labor : ManagerTab<ManagerJob_Labor, Mana
         );
         pos.y += ListEntryHeight;
 
-        var explanationRect = new Rect(pos.x, pos.y, width, ListEntryHeight * 1.5f);
         var previous = Text.Font;
         Text.Font = GameFont.Tiny;
         GUI.color = Color.gray;
-        Widgets.Label(
-            explanationRect,
-            "WorkManager.Hysteresis.Explanation".Translate(
-                job.Demands.ResumeBelow.ToStringPercent()
-            )
+        var explanation = "WorkManager.Hysteresis.Explanation".Translate(
+            job.Demands.ResumeBelow.ToStringPercent()
         );
+        // Measured at the tiny font so the whole explanation fits and the next section clears it.
+        var explanationHeight = Text.CalcHeight(explanation, width);
+        Widgets.Label(new Rect(pos.x, pos.y, width, explanationHeight), explanation);
         GUI.color = Color.white;
         Text.Font = previous;
-        pos.y += explanationRect.height;
+        pos.y += explanationHeight;
 
         return pos.y - start.y;
     }

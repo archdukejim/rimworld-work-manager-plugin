@@ -51,7 +51,7 @@
   <WorkManager.Status.RecaptureBaseline.Tip>Take the colonists' current work priorities as the new baseline. That baseline is what pawns fall back to once they hit their hour cap or have nothing scheduled, and what gets restored if you delete this job.</WorkManager.Status.RecaptureBaseline.Tip>
 
   <!-- Hysteresis -->
-  <WorkManager.Hysteresis.ResumeBelow>Resume work below {0} of target</WorkManager.Hysteresis.ResumeBelow>
+  <WorkManager.Hysteresis.ResumeBelow>Resume work below {0}</WorkManager.Hysteresis.ResumeBelow>
   <WorkManager.Hysteresis.ResumeBelow.Tip>How far a stockpile has to fall before labor is pulled back onto it. It stops being worked once it reaches target again.</WorkManager.Hysteresis.ResumeBelow.Tip>
   <WorkManager.Hysteresis.Explanation>A resource is worked until it reaches its target, then left alone until it falls back to {0} of target. Between those two points the last decision stands, so labor doesn't flip between wood and steel every cycle.</WorkManager.Hysteresis.Explanation>
 

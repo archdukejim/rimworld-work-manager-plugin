@@ -87,12 +87,28 @@ public sealed class ManagerSettings_Labor : ManagerSettings
         float max
     )
     {
-        var labelRect = rect.LeftPart(0.55f);
-        var sliderRect = rect.RightPart(0.42f);
+        var labelRect = rect.LeftPart(0.6f);
+        var sliderRect = rect.RightPart(0.37f);
         sliderRect.height = rect.height * 0.6f;
         sliderRect.y += rect.height * 0.2f;
 
-        Widgets.Label(labelRect, label);
+        // Drop a label that would otherwise wrap onto a second line down to the tiny font, so it
+        // stays on one line inside its row instead of spilling over the control beneath it.
+        var previousFont = Text.Font;
+        if (Text.CalcSize(label).x > labelRect.width)
+        {
+            Text.Font = GameFont.Tiny;
+        }
+        var labelSize = Text.CalcSize(label);
+        var centeredLabel = new Rect(
+            labelRect.x,
+            labelRect.y + ((labelRect.height - labelSize.y) / 2f),
+            labelRect.width,
+            labelSize.y
+        );
+        Widgets.Label(centeredLabel, label);
+        Text.Font = previousFont;
+
         if (!tooltip.NullOrEmpty())
         {
             TooltipHandler.TipRegion(rect, tooltip);
