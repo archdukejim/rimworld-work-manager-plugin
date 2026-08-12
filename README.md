@@ -3,6 +3,8 @@
 A Labor tab for [Colony Manager Redux](https://github.com/ilyvion/colony-manager-redux), which it
 requires — this mod does nothing on its own.
 
+**[Available on the Steam Workshop »](https://steamcommunity.com/sharedfiles/filedetails/?id=3782418159)**
+
 The other manager tabs answer "how much wood should we have?". This one answers "who should be
 cutting it, and when?" — it reads the stock targets already configured on those tabs, watches how
 fast each stockpile is actually refilling, and writes an hour-by-hour work schedule for every
