@@ -1,0 +1,54 @@
+[h1]Work Tab for Colony Manager Redux[/h1]
+
+The other manager tabs answer "how much wood should we have?" This one answers "[i]who[/i] should be cutting it, and [i]when[/i]?"
+
+It reads the stock targets you already set on the other Colony Manager Redux tabs, watches how fast each stockpile is actually refilling, and writes an hour-by-hour work schedule for every colonist — steering labor toward whatever is falling behind.
+
+[b]This is an add-on for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3310027356]Colony Manager Redux[/url], which it requires. It does nothing on its own.[/b]
+
+[hr][/hr]
+
+[h2]How it decides[/h2]
+
+[b]Demand.[/b] Every managed job with a stock threshold becomes a demand: current count, target, and the measured change per day. A demand pulls harder the further below target it sits — and a little in advance if it's draining fast enough to fall short within a day.
+
+[b]Hysteresis.[/b] A resource is worked until it reaches its target, then left alone until it falls back to a set fraction of target (85% by default). Between those two points the last decision stands, so labor doesn't flip between wood and steel every cycle.
+
+[b]Who.[/b] Colonists are scored per work type on what the game already tracks — the work-speed stats that govern the job, skill, passion, and the body capacities the work leans on:
+[list]
+[*][b]Train vs. produce[/b] slides between assigning whoever produces the most right now and whoever learns fastest with the most room to grow.
+[*][b]Injuries[/b] count: a colonist with an impaired leg stops being scheduled to haul, because their slow trips cost the colony more than the hauling gains.
+[/list]
+
+[b]When.[/b] Each colonist's schedulable hours come from their own timetable, capped by a daily work-hours limit. Past the cap — and in any hour the plan leaves empty — they fall back to their own work priorities instead of standing idle. Short runs are grown or dropped so no one spends the day walking between jobs.
+
+[b]Well-being.[/b] When a colonist's mood drops under the floor, hours come back off their schedule for recreation, scaled by how far under they are.
+
+[b]Keeping critical work manned.[/b] A demand can require a minimum number of workers every hour. Those slots are filled first, always by whoever has the fewest hours so far — so research or doctoring stays covered around the clock without one colonist pulling a 24-hour shift. Add a [b]standing demand[/b] for work that has no stockpile of its own, such as research, doctoring, or cleaning.
+
+Every option is set for the colony and can be overridden for a single colonist. Demands can likewise be pinned to specific colonists.
+
+[hr][/hr]
+
+[h2]Applying the schedule[/h2]
+
+By default the plan is applied by rewriting vanilla work priorities at the top of each hour: the scheduled work goes to priority 1 and everything else the colonist is willing to do drops behind it. Work you switched off stays off.
+
+If [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3715873875]Enhanced Work Tab[/url] is installed, the whole day's schedule is written into its hour-aware priorities instead, so you can see the plan in the work tab itself. That integration is optional.
+
+[hr][/hr]
+
+[h2]Requirements[/h2]
+[list]
+[*]RimWorld 1.6
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3310027356]Colony Manager Redux[/url] (and its own dependency, ilyvion's Laboratory)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3715873875]Enhanced Work Tab[/url] — optional
+[/list]
+
+[h2]Compatibility & safety[/h2]
+[list]
+[*]Patches nothing and adds no Harmony hooks — it extends Colony Manager Redux through its own def-driven extension points.
+[*]Safe to add to an existing save. Each colonist's priorities are snapshotted before the manager first touches them; stop managing a colonist or delete the job and that snapshot is restored.
+[/list]
+
+[b]Source & issues:[/b] [url=https://github.com/archdukejim/rimworld-work-manager-plugin]github.com/archdukejim/rimworld-work-manager-plugin[/url]
