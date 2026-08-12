@@ -40,6 +40,26 @@ public sealed class ManagerJob_Labor : ManagerJob<ManagerSettings_Labor, Manager
         UpdateInterval = ColonyManagerRedux.UpdateInterval.Daily;
     }
 
+    /// <summary>
+    /// Seeds a brand-new job from the mod-settings defaults. PostMake runs only for freshly created
+    /// jobs; a loaded job takes its values from <see cref="ExposeData"/> instead, so the two never
+    /// fight over the same fields.
+    /// </summary>
+    public override void PostMake()
+    {
+        base.PostMake();
+
+        var settings = ManagerSettings;
+        if (settings == null)
+        {
+            return;
+        }
+
+        _demands.ResumeBelow = settings.DefaultResumeBelow;
+        _colonyOptions.Set(LaborOption.MaxWorkHours, settings.DefaultMaxWorkHours);
+        _preferEnhancedWorkTab = settings.PreferEnhancedWorkTab;
+    }
+
     public DemandModel Demands => _demands;
 
     public LaborOptionSet ColonyOptions => _colonyOptions;

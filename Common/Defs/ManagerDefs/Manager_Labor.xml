@@ -7,8 +7,7 @@
         <managerJobClass>WorkManager.ManagerJob_Labor</managerJobClass>
         <managerSettingsClass>WorkManager.ManagerSettings_Labor</managerSettingsClass>
         <managerTabClass>WorkManager.ManagerTab_Labor</managerTabClass>
-        <!-- Placeholder: borrows Colony Manager Redux's stopwatch icon until this mod ships its own. -->
-        <iconPath>UI/Icons/CMR_stopwatch</iconPath>
+        <iconPath>UI/Icons/WM_labor</iconPath>
         <label>labor</label>
     </ColonyManagerRedux.ManagerDef>
 </Defs>
